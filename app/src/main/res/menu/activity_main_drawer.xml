@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Home " />
+<!--        <item-->
+<!--            android:id="@+id/nav_buy"-->
+<!--            android:icon="@drawable/packages"-->
+<!--            android:title="Buy" />-->
+<!--        <item-->
+<!--            android:id="@+id/nav_notification"-->
+<!--            android:icon="@drawable/ic_baseline_notifications_active_24"-->
+<!--            android:title="Notification" />-->
+<!--        <item-->
+<!--            android:icon="@drawable/user"-->
+<!--            android:id="@+id/nav_profile"-->
+<!--            android:title="Profile" />-->
+        <item
+            android:icon="@drawable/ic_baseline_follow_the_signs_24"
+            android:id="@+id/nav_about"
+            android:title="About Us"/>
+
+<!--        <item-->
+<!--            android:id="@+id/nav_customer_support"-->
+<!--            android:icon="@drawable/phone"-->
+<!--            android:title="Customer Support"-->
+<!--            />-->
+        <item
+            android:icon="@drawable/ic_baseline_library_books_24"
+            android:id="@+id/nav_privacy_policy"
+            android:title="Privacy Policy"
+            />
+
+        <item
+            android:id="@+id/nav_term_condition"
+            android:icon="@drawable/ic_baseline_handyman_24"
+            android:title="Term &amp; Condition"
+            />
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_baseline_power_settings_new_24"
+            android:title="Logout"
+            />
+
+
+    </group>
+</menu>

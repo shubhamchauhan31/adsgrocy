@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "261852322632",
+    "project_id": "adsgrocy",
+    "storage_bucket": "adsgrocy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:261852322632:android:4e780b0c72c1518427f17d",
+        "android_client_info": {
+          "package_name": "com.adsgrocy.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "261852322632-uffq0frofh36eg3b0a98qpbcajkt1ic8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.adsgrocy.app",
+            "certificate_hash": "6ef5c90e4c837539314c3782889d95a861977893"
+          }
+        },
+        {
+          "client_id": "261852322632-ef7jg9p6ip44dufh3o2l5qsj5ae8pltf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5X_FP3Cscyx02jIi3W_5GBJdryTx8C4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "261852322632-ef7jg9p6ip44dufh3o2l5qsj5ae8pltf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

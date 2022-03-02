@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/custom_video_card_view"
+        app:cardCornerRadius="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<!--        <VideoView-->
+<!--            android:id="@+id/custom_video_view_watch"-->
+<!--            -->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+        <VideoView
+            android:padding="10dp"
+            android:id="@+id/video_view_image"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"/>
+
+        <ImageView
+            android:id="@+id/videoView_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:scaleType="centerCrop"/>
+
+        <ImageView
+            android:id="@+id/video_view_image_view_btn"
+            android:padding="10dp"
+            android:visibility="visible"
+            android:background="@drawable/circle_shape"
+            android:src="@drawable/ic_baseline_play_arrow_24"
+            android:layout_gravity="center"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>

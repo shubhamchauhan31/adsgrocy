@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path name="my_images"
+        path="Android/data/com.riigoo2/files/Pictures" />
+
+    <external-files-path name="external_files"
+        path="Android/data/com.riigoo2/files/Pictures" />
+
+    <cache-path name="cache"
+        path="Android/data/com.riigoo2/files/Pictures" />
+
+    <external-cache-path name="external_cache"
+        path="Android/data/com.riigoo2/files/Pictures" />
+
+    <files-path name="files"
+        path="Android/data/com.riigoo2/files/Pictures" />
+</paths>

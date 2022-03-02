@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.ShareFragment">
+
+   <androidx.cardview.widget.CardView
+       android:layout_marginBottom="10dp"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp"
+       app:cardCornerRadius="15dp"
+       app:cardElevation="10dp"
+       android:layout_marginTop="30dp"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+      <LinearLayout
+         android:orientation="vertical"
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="10dp"
+          android:layout_marginBottom="10dp"
+          android:layout_marginRight="10dp"
+          android:paddingBottom="10dp"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+         <ImageView
+             android:id="@+id/share_logo"
+             android:src="@drawable/logo"
+             android:layout_marginTop="10dp"
+             android:layout_gravity="center"
+             android:layout_width="96dp"
+             android:layout_height="96dp"/>
+         <TextView
+
+             android:layout_marginTop="10dp"
+             android:textSize="18sp"
+             android:textStyle="normal"
+             android:id="@+id/share_invite_friend"
+             android:gravity="center"
+             android:layout_gravity="center"
+             android:text=""
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"/>
+
+         <TextView
+             android:id="@+id/share_promo_code"
+             android:layout_marginTop="10dp"
+             android:gravity="center"
+             android:layout_gravity="center"
+             android:textSize="18sp"
+             android:textStyle="bold"
+             android:textColor="@color/black"
+             android:text="Your Promo code : shu123"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"/>
+         <androidx.cardview.widget.CardView
+             app:cardCornerRadius="30dp"
+             android:layout_marginBottom="10dp"
+             android:layout_marginTop="20sp"
+             android:padding="1dp"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/share_and_earn_money"
+                android:padding="10dp"
+                android:background="@drawable/button_bg"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="Share To Friend &amp; Earn Money"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+         </androidx.cardview.widget.CardView>
+
+
+         <EditText
+             android:id="@+id/share_refer_Code_by"
+             android:layout_marginTop="10dp"
+             android:textSize="18sp"
+             android:textStyle="bold"
+             android:textColor="@color/black"
+             android:hint="Enter Friend Code "
+             android:layout_width="match_parent"
+             android:background="#fff"
+             android:padding="10dp"
+             android:layout_height="match_parent"/>
+
+         <androidx.cardview.widget.CardView
+             app:cardCornerRadius="30dp"
+             android:layout_marginBottom="10dp"
+             android:layout_marginTop="20sp"
+             android:padding="1dp"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+         <TextView
+             android:id="@+id/share_refer_code_to_earn"
+             android:padding="10dp"
+             android:background="@drawable/button_bg"
+             android:textColor="@color/white"
+             android:textStyle="bold"
+             android:textSize="18sp"
+             android:gravity="center"
+             android:layout_gravity="center"
+             android:text="Submit"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"/>
+         </androidx.cardview.widget.CardView>
+
+
+      </LinearLayout>
+
+
+
+
+   </androidx.cardview.widget.CardView>
+
+</FrameLayout>
