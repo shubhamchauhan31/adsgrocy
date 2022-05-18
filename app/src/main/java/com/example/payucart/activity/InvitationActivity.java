@@ -1,6 +1,9 @@
 package com.example.payucart.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -13,9 +16,15 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.payucart.R;
+import com.example.payucart.adapter.ScratchCardAdapter;
 import com.example.payucart.api.ApiCheck;
 import com.example.payucart.model.profile.UserResModel;
 import com.example.payucart.model.referCode.ReferCodeResponse;
+import com.example.payucart.model.scratchCard.ScratchCardData;
+import com.example.payucart.model.scratchCard.ScratchCardResponse;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,6 +38,11 @@ public class InvitationActivity extends AppCompatActivity {
     private TextView tvShareData;
     private ImageView imageViewLogo;
     private ImageView imageViewBackBtn;
+    private List<ScratchCardData> scratchCardData;
+    private ScratchCardAdapter scratchCardAdapter;
+
+
+    private RecyclerView scratchCardRV;
 
 
     @Override
@@ -42,7 +56,13 @@ public class InvitationActivity extends AppCompatActivity {
         imageViewLogo=findViewById(R.id.share_logo);
         imageViewBackBtn=findViewById(R.id.invitation_back_btn);
         tvShareData=findViewById(R.id.share_invite_friend);
-        getReferCodeData();
+        scratchCardRV=findViewById(R.id.scratch_card_award);
+        scratchCardRV.setHasFixedSize(true);
+        scratchCardRV.setLayoutManager(new GridLayoutManager(InvitationActivity.this,2));
+        scratchCardData=new ArrayList<>();
+        getScratchCard();
+
+//        getReferCodeData();
         imageViewBackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -51,7 +71,7 @@ public class InvitationActivity extends AppCompatActivity {
             }
         });
 
-        getReferCode();
+//        getReferCode();
 
         tvInvite.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,5 +143,41 @@ public class InvitationActivity extends AppCompatActivity {
             }
         });
     }
+
+
+    private void getScratchCard(){
+
+        ApiCheck.api.getScratchCardDetails().enqueue(new Callback<ScratchCardResponse>() {
+            @Override
+            public void onResponse(Call<ScratchCardResponse> call, Response<ScratchCardResponse> response) {
+
+                if (response.isSuccessful()){
+//
+                    try{
+                        scratchCardData=response.body().getScratchCardData();
+                        if (scratchCardData.equals(0) || scratchCardData.equals("0") || scratchCardData==null ||scratchCardData.isEmpty() || scratchCardData.size()==0){
+                            Toast.makeText(InvitationActivity.this, "No Data Found", Toast.LENGTH_SHORT).show();
+                        }else{
+                            for (int i=0; i<scratchCardData.size(); i++){
+                                scratchCardAdapter=new ScratchCardAdapter(InvitationActivity.this,scratchCardData);
+                                scratchCardRV.setAdapter(scratchCardAdapter);
+                                scratchCardAdapter.notifyDataSetChanged();
+                            }
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ScratchCardResponse> call, Throwable t) {
+                Toast.makeText(InvitationActivity.this, "onFailure : "+t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 
 }

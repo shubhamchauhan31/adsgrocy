@@ -17,6 +17,7 @@ import com.example.payucart.model.forget.ForgetReq;
 import com.example.payucart.model.forget.ForgetRes;
 import com.example.payucart.model.forget.OTPReq;
 import com.example.payucart.model.forget.OTPRes;
+import com.example.payucart.model.howTouseApp.HowTOUseResponse;
 import com.example.payucart.model.instant_deposit.InstanrDepositModel;
 import com.example.payucart.model.login.LoginReq;
 import com.example.payucart.model.login.LoginRes;
@@ -30,6 +31,9 @@ import com.example.payucart.model.referandearn.ReferReq;
 import com.example.payucart.model.referandearn.ReferRes;
 import com.example.payucart.model.rewards.Check;
 import com.example.payucart.model.rewards.RewardResponse;
+import com.example.payucart.model.scratchCard.ScratchCardResponse;
+import com.example.payucart.model.share.SharedResponse;
+import com.example.payucart.model.shareSocialMedia.ShareFriendResponse;
 import com.example.payucart.model.signup.SignUpBody;
 import com.example.payucart.model.signup.SignUpModel;
 import com.example.payucart.model.slider.SliderImageBody;
@@ -167,5 +171,16 @@ public interface ApiInterface {
                 @GET("/admindata/UserVideo")
                 Call<VedioResponse> getViedo(@Header("auth-token") String token);
 
+                // 23) scratch card data
+                @GET("/api/scratch-card")
+                Call<ScratchCardResponse> getScratchCardDetails();
+
+                // 24) How to use watch
+                    @GET("/api/how-to-use")
+                    Call<HowTOUseResponse> howToUSeApp();
+
+                    // 25) share data and image
+                    @GET("/api/shared-app-image")
+                    Call<ShareFriendResponse> getFriendResponse();
 
 }

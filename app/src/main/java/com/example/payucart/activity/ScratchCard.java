@@ -34,14 +34,10 @@ public class ScratchCard extends AppCompatActivity {
 //        scretchCardModels.add(new ScretchCardModel("Rs.123"));
 //        scretchCardModels.add(new ScretchCardModel("Rs.123"));
 //        scretchCardModels.add(new ScretchCardModel("Rs.123"));
-        scratchCardAdapter=new ScratchCardAdapter(ScratchCard.this, scretchCardModels);
-        scratchRecyclerView.setAdapter(scratchCardAdapter);
-
-
-
-
-
-
+//        scratchCardAdapter=new ScratchCardAdapter(ScratchCard.this, scretchCardModels);
+//        scratchRecyclerView.setAdapter(scratchCardAdapter);
 
     }
+
+
 }

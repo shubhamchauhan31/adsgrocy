@@ -78,7 +78,7 @@ public class MyBuyAdapter extends RecyclerView.Adapter<MyBuyAdapter.ViewHolder> 
             String money= String.valueOf(Integer.parseInt(buyBody.getCommission().toString()));
             String valditity=String.valueOf(Integer.parseInt(buyBody.getExpireIn().toString()));
             holder.tvPrice.setText("Plan : ₹ "+price);
-            holder.tvTimePeriod.setText("Daily Ads : "+time);
+            holder.tvTimePeriod.setText("Daily Task : "+time);
             holder.tvMoney.setText("Commission : "+money);
             holder.tvValidity.setText("Validity : "+valditity+"Days  ");
 //            holder.tvBuy.setOnClickListener(new View.OnClickListener() {

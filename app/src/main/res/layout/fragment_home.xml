@@ -190,7 +190,7 @@
                         android:layout_marginTop="2dp"
                         android:layout_marginBottom="5dp"
                         android:gravity="center"
-                        android:text="Track"
+                        android:text="Level"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
 
@@ -199,7 +199,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="Earning"
+                        android:text="Income"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -256,7 +256,7 @@
                         android:layout_marginTop="2dp"
                         android:layout_marginBottom="5dp"
                         android:gravity="center"
-                        android:text="Earn"
+                        android:text="Task"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
 
@@ -265,7 +265,6 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text="Money"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
                 </LinearLayout>
@@ -321,7 +320,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="2dp"
                         android:gravity="center"
-                        android:text="Invitation"
+                        android:text="Rewards"
                         android:textColor="@color/black"
                         android:textSize="12sp" />
 
@@ -330,7 +329,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:gravity="center"
-                        android:text=""
+
                         android:textColor="@color/black"
                         android:textSize="15sp" />
                 </LinearLayout>

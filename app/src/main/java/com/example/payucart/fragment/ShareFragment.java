@@ -17,6 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.payucart.R;
+import com.example.payucart.activity.ListShareAcivity;
+import com.example.payucart.activity.ShareToFriendAcivity;
 import com.example.payucart.api.ApiCheck;
 import com.example.payucart.api.ApiInterface;
 import com.example.payucart.model.profile.UserResModel;
@@ -36,6 +38,9 @@ public class ShareFragment extends Fragment {
 
     @BindView(R.id.share_and_earn_money)
     TextView tvShareAndEarnMoney;
+
+    @BindView(R.id.share_show_refer_list)
+    TextView listReferCode;
 
     private TextView tvInvite;
     private TextView tvPromoCode;
@@ -80,7 +85,13 @@ public class ShareFragment extends Fragment {
         return view;
     }
     @OnClick(R.id.share_and_earn_money) void ShareMoneyScreen(){
-        SharePromoCode();
+     //   SharePromoCode();
+        startActivity(new Intent(getContext(), ShareToFriendAcivity.class));
+
+    }
+
+    @OnClick(R.id.share_show_refer_list) void sharedFriendList(){
+        startActivity(new Intent(getContext(), ListShareAcivity.class));
     }
 
     private void SharePromoCode(){

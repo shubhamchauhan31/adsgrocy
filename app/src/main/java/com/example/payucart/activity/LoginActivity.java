@@ -54,6 +54,10 @@ public class LoginActivity extends AppCompatActivity {
     @BindView(R.id.login_sign_up_layout)
     LinearLayout layoutSignUp;
 
+    @BindView(R.id.login_app_video)
+    TextView howToUseApp;
+
+
     private  TextView tvMobile;
 
     private TextView tvPassword;
@@ -99,6 +103,10 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.login_forget_password) void forgetScreen(){
         startActivity(new Intent(LoginActivity.this, ForgetActivity.class));
+    }
+
+    @OnClick(R.id.login_app_video) void useApp(){
+        startActivity(new Intent(LoginActivity.this,HowToUseViedo.class));
     }
     @SuppressLint("NewApi")
     @OnClick(R.id.login_home_page) void homePageScreen(){

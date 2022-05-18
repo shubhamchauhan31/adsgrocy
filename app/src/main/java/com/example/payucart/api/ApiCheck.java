@@ -7,7 +7,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiCheck {
     public static String BASE_URL="http://www.adsgrocy.com";
-    //public static String BASE_URL="http://192.168.68.94:3000";
+
+//    public static String BASE_URL="https://449a-115-97-152-131.ngrok.io";
     //public static String BASE_URL="http://ecdb-122-160-47-222.ngrok.io";
 
 

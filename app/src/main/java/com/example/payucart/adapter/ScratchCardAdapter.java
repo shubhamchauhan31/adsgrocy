@@ -1,5 +1,6 @@
 package com.example.payucart.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.payucart.R;
 import com.example.payucart.activity.ScratchCard;
 import com.example.payucart.activity.ScratchCardDetails;
+import com.example.payucart.model.scratchCard.ScratchCardData;
 import com.example.payucart.model.scratchModel.ScretchCardModel;
 import com.example.payucart.scratchCard.Utils;
 
@@ -23,10 +25,11 @@ import java.util.List;
 
 public class ScratchCardAdapter extends RecyclerView.Adapter<ScratchCardAdapter.ViewHolder> {
     private Context context;
-    private List<ScretchCardModel> list;
+    private List<ScratchCardData> list;
+    private String price;
 //    private ScratchCard mScratchCard;
 
-    public ScratchCardAdapter(Context context, List<ScretchCardModel> list) {
+    public ScratchCardAdapter(Context context, List<ScratchCardData> list) {
         this.context = context;
         this.list = list;
     }
@@ -40,12 +43,30 @@ public class ScratchCardAdapter extends RecyclerView.Adapter<ScratchCardAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        ScretchCardModel scretchCardModel=list.get(position);
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
+        ScratchCardData scretchCardModel=list.get(position);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                price=list.get(position).getPrice();
+                String title=list.get(position).getTitle();
+                String  limit= String.valueOf(list.get(position).getLimit());
+
+                Intent intent=new Intent(context,ScratchCardDetails.class);
+                    intent.putExtra("price",price);
+                    intent.putExtra("title",title);
+                    intent.putExtra("limit",limit);
+
+                    context.startActivity(intent);
+
+            }
+        });
+
+
+
 //        holder.codeTxt.setText(scretchCardModel.getAmount());
-        holder.codeTxt.setImageResource(scretchCardModel.getImage());
-
-
+//        holder.codeTxt.setImageResource(scretchCardModel.getImage());
 
 //        String number =holder.codeTxt.getText().toString();
 //        holder.codeTxt.setText(number);
@@ -63,13 +84,16 @@ public class ScratchCardAdapter extends RecyclerView.Adapter<ScratchCardAdapter.
             super(itemView);
 //           mScratchCard=itemView.findViewById(R.id.custom_scratchCard);
             codeTxt=itemView.findViewById(R.id.custom_codeTxt);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    context.startActivity(new Intent(context,ScratchCardDetails.class));
-
-                }
-            });
+//            itemView.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+////                    context.startActivity(new Intent(context,ScratchCardDetails.class));
+//                    Intent intent=new Intent(context,ScratchCardDetails.class);
+//                    intent.putExtra("price",price);
+//                    context.startActivity(intent);
+//
+//                }
+//            });
 
 //            mScratchCard.setOnScratchListener(new ScratchCard.OnScratchListener() {
 //                @Override

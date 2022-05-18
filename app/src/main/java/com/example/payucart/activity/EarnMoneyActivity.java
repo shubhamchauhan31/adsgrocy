@@ -31,6 +31,8 @@ import com.example.payucart.api.ApiCheck;
 import com.example.payucart.model.profile.UserResModel;
 import com.example.payucart.model.rewards.Check;
 import com.example.payucart.model.rewards.RewardResponse;
+import com.example.payucart.model.scratchCard.ScratchCardData;
+import com.example.payucart.model.scratchCard.ScratchCardResponse;
 import com.example.payucart.model.scratchModel.ScretchCardModel;
 import com.example.payucart.model.video.VedioResponse;
 import com.example.payucart.model.video.VideoData;
@@ -75,7 +77,7 @@ public class EarnMoneyActivity extends AppCompatActivity implements OnUserEarned
     private ImageView imgBuyPackage;
     private List<ScretchCardModel> scretchCardModels;
     private ScratchCardAdapter scratchCardAdapter;
-
+    private List<ScratchCardData> scratchCardData;
 
 
 
@@ -107,23 +109,20 @@ public class EarnMoneyActivity extends AppCompatActivity implements OnUserEarned
 
 //
         vedioResponses=new ArrayList<>();
-        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
-        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
-        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
-        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
-        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
-        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
-        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
-        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
-        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
-
-        scratchCardAdapter=new ScratchCardAdapter(EarnMoneyActivity.this,scretchCardModels);
-        recyclerviewVedioView.setAdapter(scratchCardAdapter);
+        scratchCardData=new ArrayList<>();
+//        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
+//        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
+//        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
+//        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
+//        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
+//        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
+//        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
+//        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
+//        scretchCardModels.add(new ScretchCardModel(R.drawable.ic_cup));
 
 
 
         checkValidation();
-//        checkTask();
 
 
         earnMoneyBuyPackage.setOnClickListener(new View.OnClickListener() {
@@ -276,7 +275,7 @@ public class EarnMoneyActivity extends AppCompatActivity implements OnUserEarned
                         tvAmount.setText(" ₹ "+amount);
                         tvTodayProfit.setText(String.valueOf(todayEarning));
                         tvCompletedTask.setText(String.valueOf(completedOrder));
-                        //checkTask();
+                        checkTask();
 
                     }else{
                         Toast.makeText(getApplicationContext(), "Error : ", Toast.LENGTH_SHORT).show();
@@ -346,6 +345,40 @@ public class EarnMoneyActivity extends AppCompatActivity implements OnUserEarned
         });
     }
 
+//    private void getScratchCard(){
+//
+//        ApiCheck.api.getScratchCardDetails().enqueue(new Callback<ScratchCardResponse>() {
+//            @Override
+//            public void onResponse(Call<ScratchCardResponse> call, Response<ScratchCardResponse> response) {
+//
+//                if (response.isSuccessful()){
+////
+//                    try{
+//                        scratchCardData=response.body().getScratchCardData();
+//                        if (scratchCardData.equals(0) || scratchCardData.equals("0") || scratchCardData==null ||scratchCardData.isEmpty() || scratchCardData.size()==0){
+//                            Toast.makeText(EarnMoneyActivity.this, "No Data Found", Toast.LENGTH_SHORT).show();
+//                        }else{
+//                            for (int i=0; i<scratchCardData.size(); i++){
+//                                scratchCardAdapter=new ScratchCardAdapter(EarnMoneyActivity.this,scratchCardData);
+//                                recyclerviewVedioView.setAdapter(scratchCardAdapter);
+//                                scratchCardAdapter.notifyDataSetChanged();
+//                            }
+//                        }
+//                    }catch (Exception e){
+//                        e.printStackTrace();
+//                    }
+//
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<ScratchCardResponse> call, Throwable t) {
+//                Toast.makeText(EarnMoneyActivity.this, "onFailure : "+t.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
+
 
     @Override
     protected void onResume() {
@@ -354,4 +387,6 @@ public class EarnMoneyActivity extends AppCompatActivity implements OnUserEarned
 
 
     }
+
+
 }
