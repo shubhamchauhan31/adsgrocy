@@ -52,11 +52,13 @@ public class ScratchCardAdapter extends RecyclerView.Adapter<ScratchCardAdapter.
                 price=list.get(position).getPrice();
                 String title=list.get(position).getTitle();
                 String  limit= String.valueOf(list.get(position).getLimit());
+                String id=String.valueOf(list.get(position).getId());
 
                 Intent intent=new Intent(context,ScratchCardDetails.class);
                     intent.putExtra("price",price);
                     intent.putExtra("title",title);
                     intent.putExtra("limit",limit);
+                    intent.putExtra("id",id);
 
                     context.startActivity(intent);
 

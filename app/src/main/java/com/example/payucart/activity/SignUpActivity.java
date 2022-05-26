@@ -195,6 +195,8 @@ public class SignUpActivity extends AppCompatActivity {
         String mobile = etPhoneNumber.getText().toString();
         progressDialog.setTitle("AgsGrocy");
         progressDialog.setMessage("Loading Please Wait...");
+        progressDialog.setCancelable(false);
+
 
 
         if (name.isEmpty()) {

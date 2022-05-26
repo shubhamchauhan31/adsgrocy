@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,8 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -27,14 +30,17 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.payucart.R;
 import com.example.payucart.activity.AllPackageActivity;
 import com.example.payucart.activity.BuyActivity;
 import com.example.payucart.activity.EarnMoneyActivity;
 import com.example.payucart.activity.HomePageActivity;
+import com.example.payucart.activity.HowToUseViedo;
 import com.example.payucart.activity.InstantDepositActivity;
 import com.example.payucart.activity.InstantPayoutActivity;
 import com.example.payucart.activity.InvitationActivity;
+import com.example.payucart.activity.LevelIncomeActivity;
 import com.example.payucart.activity.SendMoneyActivity;
 import com.example.payucart.activity.TrackEarningActivity;
 import com.example.payucart.activity.WalletActivity;
@@ -49,6 +55,7 @@ import com.example.payucart.model.buy.BuyModel;
 import com.example.payucart.model.changePassword.ChangePassReq;
 import com.example.payucart.model.checkBenificalAccount.CheckBenifiaclAccountReq;
 import com.example.payucart.model.checkBenificalAccount.CheckBenificalResponse;
+import com.example.payucart.model.howTouseApp.HowTOUseResponse;
 import com.example.payucart.model.profile.UserResModel;
 import com.example.payucart.model.slider.SliderImageBody;
 import com.example.payucart.model.slider.SliderImageModel;
@@ -131,6 +138,10 @@ public class HomeFragment extends Fragment {
     private RecyclerView recyclerViewPackage;
     private TextView tvViewAll;
     private TextView tvUserName;
+    private VideoView homeBanerVideoView;
+
+    private ImageView imgPlay;
+    private ImageView imgThumbnail;
 
 
 
@@ -139,6 +150,8 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         ButterKnife.bind(this,view);
         sliderView=view.findViewById(R.id.home_slider);
+        homeBanerVideoView=view.findViewById(R.id.home_fragment_video_view_banner);
+
 
         recyclerViewPackage=view.findViewById(R.id.home_package);
 
@@ -146,6 +159,9 @@ public class HomeFragment extends Fragment {
         recyclerViewPackage.setHasFixedSize(false);
         tvViewAll=view.findViewById(R.id.home_view_all);
         tvUserName=view.findViewById(R.id.home_user_name);
+        imgThumbnail=view.findViewById(R.id.home_videoView_thumbnail);
+        imgPlay=view.findViewById(R.id.home_videoView_thumbnail);
+
         tvViewAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -154,10 +170,19 @@ public class HomeFragment extends Fragment {
             }
         });
 
+
+        imgPlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                getViedoBanner();
+
+            }
+        });
         recyclerViewPackage.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        getBanner();
+//        getBanner();
         addPackage();
         getProfileData();
+        getViedoBanner();
         return view;
     }
 
@@ -303,17 +328,10 @@ public class HomeFragment extends Fragment {
     }
 
     @OnClick({R.id.home_track_earning_tv,R.id.home_track_earning_layout,R.id.home_tracking_earning_image_view}) void trackEarningPage(){
-        startActivity(new Intent(getContext(),TrackEarningActivity.class));
+        startActivity(new Intent(getContext(), LevelIncomeActivity.class));
     }
 
-//    @OnClick(R.id.home_instant_deposit) void instantDepositScreen(){
-//        startActivity(new Intent(getContext(), InstantDepositActivity.class));
-//    }
-//    @OnClick(R.id.home_instant_payout) void instantPayucartScreen(){
-//        startActivity(new Intent(getContext(), InstantPayoutActivity.class));
-//    }
-
-   @OnClick({R.id.home_invitation_image_view,R.id.home_invitation_layout}) void Invitation(){
+    @OnClick({R.id.home_invitation_image_view,R.id.home_invitation_layout}) void Invitation(){
         startActivity(new Intent(getContext(), InvitationActivity.class));
    }
 
@@ -352,6 +370,8 @@ public class HomeFragment extends Fragment {
             @Override
             public void onFailure(Call<UserResModel> call, Throwable t) {
 
+                Toast.makeText(getContext(), "onFailure "+t.getMessage(), Toast.LENGTH_SHORT).show();
+
             }
         });
    }
@@ -359,47 +379,29 @@ public class HomeFragment extends Fragment {
     private void CheckBenificalAccount(){
         SharedPreferences preferences = getContext().getSharedPreferences("MY_APP", Context.MODE_PRIVATE);
         SharedPreferences mobilePerf = getContext().getSharedPreferences("MOBILE", Context.MODE_PRIVATE);
-
         String retrivedToken  = preferences.getString("TOKEN",null);//second parameter default value.
         String mobile=mobilePerf.getString("MOBILE",null);
-
         CheckBenifiaclAccountReq checkBenifiaclAccountReq=new CheckBenifiaclAccountReq();
         checkBenifiaclAccountReq.setMobile(mobile);
-
         try{
             ApiCheck.api.CheckBankAccount(retrivedToken,checkBenifiaclAccountReq).enqueue(new Callback<CheckBenificalResponse>() {
                 @Override
                 public void onResponse(Call<CheckBenificalResponse> call, Response<CheckBenificalResponse> response) {
-
                     Log.d("shub", "onResponse: "+response);
-
                     try {
-
                         if (response.isSuccessful()){
-
-
                                 isBenificialAccountAdded = true;
-
                                 startActivity(new Intent(getContext(),WalletActivity.class));
-
-
-
-
                         }
                         else {
                             isBenificialAccountAdded = false;
                             startActivity(new Intent(getContext(),BuyActivity.class));
-
                         }
-
                     }catch (Exception e){
                         Toast.makeText(getContext(),"Exception "+e.getMessage(),Toast.LENGTH_SHORT).show();
                        // startActivity(new Intent(getContext(),BuyActivity.class));
 
                     }
-
-
-
                 }
 
                 @Override
@@ -416,34 +418,51 @@ public class HomeFragment extends Fragment {
         Toast.makeText(getContext(),"Error"+e.getMessage(),Toast.LENGTH_SHORT).show();
 
         }
-//        ApiCheck.api.CheckBankAccount(retrivedToken,checkBenifiaclAccountReq).enqueue(new Callback<CheckBenificalResponse>() {
-//            @Override
-//            public void onResponse(Call<CheckBenificalResponse> call, Response<CheckBenificalResponse> response) {
-//
-//                Log.d("shub", "onResponse: "+response);
-//
-//                if(response.isSuccessful()){
-//
-//                    isBenificialAccountAdded = true;
-//
-//                    startActivity(new Intent(getContext(),WalletActivity.class));
-//
-//
-//                }
-//                else {
-//                    isBenificialAccountAdded = false;
-//                    startActivity(new Intent(getContext(),BuyActivity.class));
-//
-//                }
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<CheckBenificalResponse> call, Throwable t) {
-//
-//            }
-//        });
 
+
+    }
+
+
+    private void getViedoBanner(){
+        progressDialog.show();
+//        String getUrl=getIntent().getExtras().getString("url");
+        MediaController mediaController=new MediaController(getContext());
+        mediaController.setAnchorView(homeBanerVideoView);
+
+//        homeBanerVideoView.setKeepScreenOn(true);
+
+
+
+        ApiCheck.api.howToUSeApp().enqueue(new Callback<HowTOUseResponse>() {
+            @Override
+            public void onResponse(Call<HowTOUseResponse> call, Response<HowTOUseResponse> response) {
+                if (response.isSuccessful()){
+//                    howToUSeAppList.add(response.body().getHowToUSeApp());
+                    String useApp=response.body().getHowToUSeApp().getUrl();
+                    Glide.with(getContext()).load(useApp).into(imgThumbnail);
+
+
+//                    Uri uri=Uri.parse("http://www.adsgrocy.com/"+useApp);
+                    Uri uri=Uri.parse("http://13.235.92.159:8080/"+useApp);
+//                    homeBanerVideoView.setVideoPath("http://13.235.92.159:8080/"+useApp);
+
+
+
+                    homeBanerVideoView.setMediaController(mediaController);
+                    homeBanerVideoView.setVideoURI(uri);
+                    homeBanerVideoView.start();
+                    progressDialog.dismiss();
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<HowTOUseResponse> call, Throwable t) {
+                Toast.makeText(getContext(),"onFailure : "+t.getMessage(),Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
+
+            }
+        });
     }
 
     public static String getMobile(Context context, String key) {

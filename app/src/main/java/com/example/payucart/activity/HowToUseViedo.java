@@ -64,7 +64,8 @@ public class HowToUseViedo extends AppCompatActivity {
                 if (response.isSuccessful()){
 //                    howToUSeAppList.add(response.body().getHowToUSeApp());
                     String useApp=response.body().getHowToUSeApp().getUrl();
-                    Uri uri=Uri.parse("http://www.adsgrocy.com/"+useApp);
+//                    Uri uri=Uri.parse("http://www.adsgrocy.com/"+useApp);
+                    Uri uri=Uri.parse("http://13.235.92.159:8080/"+useApp);
                     //  videoView.setMediaController(mediaController);
                     videoViewAbout.setVideoURI(uri);
                     videoViewAbout.start();
@@ -75,6 +76,8 @@ public class HowToUseViedo extends AppCompatActivity {
             @Override
             public void onFailure(Call<HowTOUseResponse> call, Throwable t) {
                 Toast.makeText(HowToUseViedo.this,"onFailure : "+t.getMessage(),Toast.LENGTH_SHORT).show();
+                progressDialog.dismiss();
+
             }
         });
 

@@ -1,5 +1,6 @@
 package com.example.payucart.api;
 
+import com.example.payucart.activity.ScratchCard;
 import com.example.payucart.model.addmoney.AddMoneyReq;
 import com.example.payucart.model.addmoney.AddMoneyResponse;
 import com.example.payucart.model.benificial.BenificalReq;
@@ -11,6 +12,7 @@ import com.example.payucart.model.buy.getPackages.PackgesBody;
 import com.example.payucart.model.buy.getPackages.PackgesModel;
 import com.example.payucart.model.changePassword.ChangePassReq;
 import com.example.payucart.model.changePassword.ChangePassRes;
+import com.example.payucart.model.chart.ChartResponse;
 import com.example.payucart.model.checkBenificalAccount.CheckBenifiaclAccountReq;
 import com.example.payucart.model.checkBenificalAccount.CheckBenificalResponse;
 import com.example.payucart.model.forget.ForgetReq;
@@ -19,6 +21,7 @@ import com.example.payucart.model.forget.OTPReq;
 import com.example.payucart.model.forget.OTPRes;
 import com.example.payucart.model.howTouseApp.HowTOUseResponse;
 import com.example.payucart.model.instant_deposit.InstanrDepositModel;
+import com.example.payucart.model.levelCount.LevelCountResponse;
 import com.example.payucart.model.login.LoginReq;
 import com.example.payucart.model.login.LoginRes;
 import com.example.payucart.model.mobile.MobileModel;
@@ -32,6 +35,7 @@ import com.example.payucart.model.referandearn.ReferRes;
 import com.example.payucart.model.rewards.Check;
 import com.example.payucart.model.rewards.RewardResponse;
 import com.example.payucart.model.scratchCard.ScratchCardResponse;
+import com.example.payucart.model.scratchCard.scratchApplyMoney.ScratchCardPrice;
 import com.example.payucart.model.share.SharedResponse;
 import com.example.payucart.model.shareSocialMedia.ShareFriendResponse;
 import com.example.payucart.model.signup.SignUpBody;
@@ -67,6 +71,8 @@ import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface ApiInterface {
             // 1) user account create
@@ -173,7 +179,7 @@ public interface ApiInterface {
 
                 // 23) scratch card data
                 @GET("/api/scratch-card")
-                Call<ScratchCardResponse> getScratchCardDetails();
+                Call<ScratchCardResponse> getScratchCardDetails(@Header("auth-token") String token);
 
                 // 24) How to use watch
                     @GET("/api/how-to-use")
@@ -182,5 +188,19 @@ public interface ApiInterface {
                     // 25) share data and image
                     @GET("/api/shared-app-image")
                     Call<ShareFriendResponse> getFriendResponse();
+
+                    // 26) srcatch card money
+                    @POST("/api/scratch-card/{id}")
+                    Call<ScratchCardPrice> getScratchPrice(@Header("auth-token") String token, @Path("id") String id);
+
+                    // 28) show chart-level
+
+    @GET("/api/level")
+    Call<ChartResponse> getChartResponse();
+
+    // 29) user Level Earning
+    @GET("/api/get-user-level-earning")
+    Call<LevelCountResponse> getLevelCount(@Header("auth-token") String token);
+
 
 }

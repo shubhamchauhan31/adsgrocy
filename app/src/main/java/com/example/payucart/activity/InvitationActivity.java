@@ -147,7 +147,11 @@ public class InvitationActivity extends AppCompatActivity {
 
     private void getScratchCard(){
 
-        ApiCheck.api.getScratchCardDetails().enqueue(new Callback<ScratchCardResponse>() {
+
+        SharedPreferences preferences = InvitationActivity.this.getSharedPreferences("MY_APP", Context.MODE_PRIVATE);
+        String retrivedToken  = preferences.getString("TOKEN",null);//second parameter default value.
+
+        ApiCheck.api.getScratchCardDetails(retrivedToken).enqueue(new Callback<ScratchCardResponse>() {
             @Override
             public void onResponse(Call<ScratchCardResponse> call, Response<ScratchCardResponse> response) {
 
@@ -180,4 +184,9 @@ public class InvitationActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getScratchCard();
+    }
 }

@@ -48,6 +48,8 @@ public class ShareFragment extends Fragment {
     private EditText etReferCodeFriend;
     private TextView tvSubmitFriendCode;
     private ProgressDialog progressDialog;
+    private String inviteData;
+    private String refercode;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -86,7 +88,7 @@ public class ShareFragment extends Fragment {
     }
     @OnClick(R.id.share_and_earn_money) void ShareMoneyScreen(){
      //   SharePromoCode();
-        startActivity(new Intent(getContext(), ShareToFriendAcivity.class));
+        startActivity(new Intent(getContext(), ShareToFriendAcivity.class).putExtra("referCode",refercode));
 
     }
 
@@ -117,7 +119,7 @@ public class ShareFragment extends Fragment {
             @Override
             public void onResponse(Call<UserResModel> call, Response<UserResModel> response) {
                 if (response.isSuccessful()){
-                    String refercode=response.body().getReferCode();
+                     refercode=response.body().getReferCode();
                     tvPromoCode.setText(refercode);
                 }
             }
@@ -141,7 +143,7 @@ public class ShareFragment extends Fragment {
             public void onResponse(Call<ReferCodeResponse> call, Response<ReferCodeResponse> response) {
                 try{
                     if (response.isSuccessful()){
-                        String inviteData=response.body().getData();
+                         inviteData=response.body().getData();
                         tvInvite.setText(inviteData);
                     }else{
                         Toast.makeText(getContext()," Error : "+response.body().getError(),Toast.LENGTH_SHORT).show();

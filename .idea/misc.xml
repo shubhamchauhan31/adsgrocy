@@ -103,24 +103,60 @@
         <entry key="..\:/AndroidProjects/adsgrocy/PayUCart/app/src/main/res/layout/fragment_with_draw_money.xml" value="0.23854166666666668" />
         <entry key="..\:/AndroidProjects/adsgrocy/PayUCart/app/src/main/res/layout/nav_header_drawer.xml" value="0.22826086956521738" />
         <entry key="app/src/main/res/drawable/edit_text_bg.xml" value="0.3575" />
+        <entry key="app/src/main/res/drawable/ic_baseline_follow_the_signs_24.xml" value="0.3575" />
+        <entry key="app/src/main/res/drawable/ic_baseline_library_books_24.xml" value="0.3575" />
         <entry key="app/src/main/res/drawable/ic_cup.xml" value="0.231" />
+        <entry key="app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.3575" />
         <entry key="app/src/main/res/drawable/task.xml" value="0.3575" />
+        <entry key="app/src/main/res/layout/activity_about_acivity.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/activity_add_money.xml" value="0.3278985507246377" />
         <entry key="app/src/main/res/layout/activity_add_profile.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/activity_all_package.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/activity_bottom_tabs.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/activity_buy.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/activity_change_password.xml" value="0.3278985507246377" />
         <entry key="app/src/main/res/layout/activity_earn_money.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/activity_home_page.xml" value="0.3278985507246377" />
         <entry key="app/src/main/res/layout/activity_how_to_use_viedo.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/activity_instant_deposit.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/activity_instant_payout.xml" value="0.3278985507246377" />
         <entry key="app/src/main/res/layout/activity_invitation.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/activity_level_income.xml" value="0.5" />
         <entry key="app/src/main/res/layout/activity_list_share_acivity.xml" value="0.3278985507246377" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/activity_package_web_view_acivity.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/activity_privercy_acivity.xml" value="0.3278985507246377" />
         <entry key="app/src/main/res/layout/activity_scratch_card.xml" value="0.3278985507246377" />
         <entry key="app/src/main/res/layout/activity_scratch_card_details.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/activity_send_money.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/activity_share.xml" value="0.3278985507246377" />
         <entry key="app/src/main/res/layout/activity_share_to_friend_acivity.xml" value="0.3278985507246377" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.3278985507246377" />
         <entry key="app/src/main/res/layout/activity_vedio_view.xml" value="0.2909604519774011" />
+        <entry key="app/src/main/res/layout/activity_wallet.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/custom_account_info.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/custom_add_money_layoout.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/custom_bottom_image_chooser_dialog.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/custom_comppleted_task.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/custom_forget_password.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/custom_level_income.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/custom_notification.xml" value="0.3278985507246377" />
         <entry key="app/src/main/res/layout/custom_scratch_card.xml" value="0.3278985507246377" />
         <entry key="app/src/main/res/layout/custom_share_app_list.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/custom_today_earning.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/custom_tost.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/custom_viedo_view.xml" value="0.23697916666666666" />
+        <entry key="app/src/main/res/layout/custom_waithdraw.xml" value="0.3278985507246377" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.3278985507246377" />
         <entry key="app/src/main/res/layout/fragment_package_fragments.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.3278985507246377" />
         <entry key="app/src/main/res/layout/fragment_share.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/fragment_today_earning.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/fragment_wallet_fragemts.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/fragment_with_draw_money.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/layout/nav_header_drawer.xml" value="0.3278985507246377" />
+        <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.35625" />
       </map>
     </option>
   </component>

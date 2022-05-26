@@ -129,6 +129,7 @@ public class LoginActivity extends AppCompatActivity {
             progressDialog.setTitle("AdsGrocy");
             progressDialog.setMessage("Loading...");
             progressDialog.show();
+            progressDialog.setCancelable(false);
 
             LoginReq loginReq=new LoginReq();
             loginReq.setMobile(userPhone);

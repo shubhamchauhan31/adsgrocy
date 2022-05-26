@@ -40,6 +40,7 @@
 
             <com.smarteist.autoimageslider.SliderView
                 android:id="@+id/home_slider"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="170dp"
                 android:layout_marginLeft="10dp"
@@ -60,9 +61,71 @@
                 app:sliderScrollTimeInSec="1"
 
                 tools:ignore="MissingClass" />
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_marginLeft="10dp"-->
+<!--                android:layout_marginRight="10dp"-->
+<!--                android:padding="10dp"-->
+<!--                app:cardCornerRadius="15dp"-->
+<!--                android:layout_height="200dp">-->
+<!--                <VideoView-->
+<!--                    android:id="@+id/home_fragment_video_view_banner"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+
+<!--                </VideoView>-->
+
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+        <androidx.cardview.widget.CardView
+                    android:id="@+id/custom_video_card_view"
+                    app:cardCornerRadius="15dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="170dp">
+
+                    <!--        <VideoView-->
+                    <!--            android:id="@+id/custom_video_view_watch"-->
+                    <!--            -->
+                    <!--            android:layout_width="match_parent"-->
+                    <!--            android:layout_height="wrap_content"/>-->
+
+                    <VideoView
+                        android:padding="10dp"
+                        android:id="@+id/home_fragment_video_view_banner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"/>
+
+                    <ImageView
+                        android:visibility="gone"
+                        android:id="@+id/home_videoView_thumbnail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:scaleType="centerCrop"/>
+
+                    <ImageView
+                        android:id="@+id/home_video_view_image_view_btn"
+                        android:padding="10dp"
+
+                        android:visibility="gone"
+                        android:background="@drawable/circle_shape"
+                        android:src="@drawable/ic_baseline_play_arrow_24"
+                        android:layout_gravity="center"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"/>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+
 
 
             <LinearLayout
+                android:layout_marginTop="40dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

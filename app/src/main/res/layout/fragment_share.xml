@@ -5,6 +5,9 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragment.ShareFragment">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
    <androidx.cardview.widget.CardView
        android:layout_marginBottom="10dp"
@@ -12,12 +15,13 @@
        android:layout_marginRight="10dp"
        app:cardCornerRadius="15dp"
        app:cardElevation="5dp"
+       app:cardBackgroundColor="#fff"
        android:layout_marginTop="30dp"
        android:layout_width="match_parent"
        android:layout_height="wrap_content">
 
       <LinearLayout
-         android:orientation="vertical"
+          android:orientation="vertical"
           android:layout_marginLeft="10dp"
           android:layout_marginTop="10dp"
           android:layout_marginBottom="30dp"
@@ -31,13 +35,12 @@
              android:src="@drawable/logo"
              android:layout_marginTop="10dp"
              android:layout_gravity="center"
-             android:layout_width="80dp"
-             android:layout_height="80dp"/>
+             android:layout_width="150dp"
+             android:layout_height="150dp"/>
 
 
          <TextView
-
-
+             android:textColor="#000"
              android:layout_marginTop="10dp"
              android:textSize="18sp"
              android:textStyle="normal"
@@ -89,9 +92,10 @@
              android:textSize="18sp"
              android:textStyle="bold"
              android:textColor="@color/black"
+             android:textColorHint="#000"
              android:hint="Enter Friend Code "
              android:layout_width="match_parent"
-             android:background="#fff"
+             android:background="@drawable/edit_text_bg"
              android:padding="10dp"
              android:layout_height="match_parent"/>
 
@@ -102,18 +106,18 @@
              android:padding="1dp"
              android:layout_width="match_parent"
              android:layout_height="match_parent">
-         <TextView
-             android:id="@+id/share_refer_code_to_earn"
-             android:padding="10dp"
-             android:background="@drawable/button_bg"
-             android:textColor="@color/white"
-             android:textStyle="bold"
-             android:textSize="18sp"
-             android:gravity="center"
-             android:layout_gravity="center"
-             android:text="Submit"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"/>
+            <TextView
+                android:id="@+id/share_refer_code_to_earn"
+                android:padding="10dp"
+                android:background="@drawable/button_bg"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:text="Submit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
          </androidx.cardview.widget.CardView>
 
          <androidx.cardview.widget.CardView
@@ -121,6 +125,7 @@
              android:layout_marginBottom="0dp"
              android:layout_marginTop="30sp"
              android:padding="1dp"
+             android:visibility="gone"
              android:layout_width="match_parent"
              android:layout_height="match_parent">
             <TextView
@@ -145,5 +150,8 @@
 
 
    </androidx.cardview.widget.CardView>
+
+
+</ScrollView>
 
 </FrameLayout>

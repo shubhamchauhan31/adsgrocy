@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:background="#d6d6d6"
+                android:layout_width="2dp"
+                android:layout_height="50dp"/>
+            <TextView
+                android:id="@+id/custom_level_name"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="15dp"
+                android:layout_gravity="center"
+                android:textColor="#000"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:text="Direct Level 1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:background="#d6d6d6"
+                android:layout_width="2dp"
+                android:layout_height="50dp"/>
+            <TextView
+                android:id="@+id/custom_level_active_member"
+                android:gravity="center"
+                android:layout_marginStart="2dp"
+                android:layout_weight="1"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textColor="#28a048"
+                android:text="1"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginStart="2dp"
+                android:background="#d6d6d6"
+                android:layout_width="2dp"
+                android:layout_height="50dp"/>
+
+            <TextView
+                android:id="@+id/custom_level_in_active_member"
+                android:layout_weight="1"
+                android:textSize="15dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textColor="#e16275"
+                android:text="1"
+                android:layout_gravity="center"                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_marginStart="2dp"
+                android:background="#d6d6d6"
+                android:layout_width="2dp"
+                android:layout_height="50dp"/>
+
+            <TextView
+                android:id="@+id/custom_level_rate"
+                android:layout_marginStart="2dp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:textColor="#28a048"
+                android:text="1"
+                android:layout_gravity="center"                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:background="#d6d6d6"
+                android:layout_width="2dp"
+                android:layout_height="50dp"/>
+            <TextView
+                android:id="@+id/custom_level_daily_income"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:textColor="#000"
+                android:text="1"
+                android:layout_gravity="center"                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:background="#d6d6d6"
+                android:layout_width="2dp"
+                android:layout_height="50dp"/>
+
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_marginTop="0dp"
+            android:background="#d6d6d6"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"/>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
